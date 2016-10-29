@@ -24,6 +24,7 @@ public class buttonListener implements View.OnClickListener {
     public void onClick(View view){
 
         Intent intent = new Intent(mainActivity.getBaseContext(), nextActivity.getClass());
+        this.mainActivity.startActivity(intent);
 
     }
 }
