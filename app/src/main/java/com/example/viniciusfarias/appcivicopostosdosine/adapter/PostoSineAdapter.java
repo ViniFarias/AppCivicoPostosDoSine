@@ -36,7 +36,7 @@ public class PostoSineAdapter extends BaseAdapter {
 
         if (convertView == null) {
 
-            convertView = mInflater.inflate(R.layout.list_item, null);
+            convertView = mInflater.inflate(R.layout.activity_sinedetalhes, null);
 
             holder = new ViewHolder();
             holder.tvCodPosto = (TextView) convertView.findViewById(R.id.tvCodPosto);
