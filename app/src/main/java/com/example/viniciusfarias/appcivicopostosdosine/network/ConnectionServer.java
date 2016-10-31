@@ -10,7 +10,7 @@ public class ConnectionServer {
 
     private static final String URL_BASES =
 
-             "http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego/";
+             "http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/";
 
 
     private static APIService service;

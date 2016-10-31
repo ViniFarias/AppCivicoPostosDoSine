@@ -17,13 +17,13 @@ public interface APIService {
 
 
 
-    @GET("cod/{cod}")
+    @GET("emprego/cod/{cod}")
     Call<List<PostoSine>> getSineCod(@Path("cod") String cod);
 
-    @GET("latitude/-7.242662/longitude/-35.971605/raio/100")
+    @GET("emprego/latitude/-7.242662/longitude/-35.971605/raio/100")
     Call<List<PostoSine>> getSineCg();
 
-    @GET
+    @GET("emprego/")
     Call<List<PostoSine>> getSineBr();
 
 }
