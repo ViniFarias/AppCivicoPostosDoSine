@@ -23,7 +23,7 @@ public interface APIService {
     @GET("latitude/-7.242662/longitude/-35.971605/raio/100")
     Call<List<PostoSine>> getSineCg();
 
-    @GET("")
+    @GET
     Call<List<PostoSine>> getSineBr();
 
 }

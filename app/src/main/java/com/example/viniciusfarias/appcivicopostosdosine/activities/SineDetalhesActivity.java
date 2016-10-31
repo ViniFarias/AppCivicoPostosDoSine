@@ -14,6 +14,7 @@ import com.example.viniciusfarias.appcivicopostosdosine.network.ConnectionServer
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,7 +22,6 @@ import retrofit2.Response;
 public class SineDetalhesActivity extends Activity {
 
     Bundle codSine;
-
     @BindView(R.id.tvCodPosto) TextView tvCodPosto;
     @BindView(R.id.tvBairro) TextView tvBairro;
     @BindView(R.id.tvCep) TextView tvCep;
@@ -36,6 +36,8 @@ public class SineDetalhesActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sinedetalhes);
+
+        ButterKnife.bind(this);
 
         codSine = getIntent().getExtras();
         String codPostoSine = codSine.getString("codSine");
