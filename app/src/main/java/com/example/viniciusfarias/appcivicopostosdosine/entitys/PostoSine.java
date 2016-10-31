@@ -1,5 +1,7 @@
 package com.example.viniciusfarias.appcivicopostosdosine.entitys;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by vinicius on 10/25/2016.
  */
@@ -14,11 +16,15 @@ public class PostoSine {
     private String telefone;
     private String municipio;
     private String uf;
-    /*private String lat;
-    private String longi;*/
+    
+    @SerializedName("lat")
+    private String latitude;
+
+    @SerializedName("long")
+    private String longitude;
 
     public PostoSine(String codPosto, String nome, String entidadeConveniada, String endereco, String bairro, String cep,
-                     String telefone, String municipio, String uf/*, String lat, String longi*/){
+                     String telefone, String municipio, String uf, String latitude, String longitude){
 
         this.codPosto = codPosto;
         this.nome = nome;
@@ -29,6 +35,8 @@ public class PostoSine {
         this.telefone = telefone;
         this.municipio = municipio;
         this.uf = uf;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public PostoSine(){
@@ -105,5 +113,21 @@ public class PostoSine {
 
     public void setMunicipio(String municipio) {
         this.municipio = municipio;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }
