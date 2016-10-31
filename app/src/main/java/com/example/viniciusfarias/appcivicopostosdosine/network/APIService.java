@@ -15,8 +15,10 @@ import retrofit2.http.Path;
  */
 public interface APIService {
 
-    @POST("cod/{cod}")
-    Call<PostoSine> getSineCod(@Path("cod") String cod);
+
+
+    @GET("cod/{cod}")
+    Call<List<PostoSine>> getSineCod(@Path("cod") String cod);
 
     @GET("latitude/-7.242662/longitude/-35.971605/raio/100")
     Call<List<PostoSine>> getSineCg();
