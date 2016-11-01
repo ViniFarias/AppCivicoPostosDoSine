@@ -5,13 +5,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
-import android.widget.ListView;
 
 import com.example.viniciusfarias.appcivicopostosdosine.R;
 import com.example.viniciusfarias.appcivicopostosdosine.adapter.PostoSineCGAdapter;
 import com.example.viniciusfarias.appcivicopostosdosine.entitys.PostoSine;
-import com.example.viniciusfarias.appcivicopostosdosine.listeners.ListenerSineItem;
 import com.example.viniciusfarias.appcivicopostosdosine.network.ConnectionServer;
 
 import java.util.ArrayList;
@@ -29,6 +26,7 @@ import retrofit2.Response;
 public class SineCGActivity extends Activity{
 
     ArrayList<PostoSine> postos;
+
     @BindView(R.id.rcPostosSine) RecyclerView rcPostosSine;
     private PostoSineCGAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -52,7 +50,7 @@ public class SineCGActivity extends Activity{
         rcPostosSine.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new PostoSineCGAdapter(postos);
+        mAdapter = new PostoSineCGAdapter(postos, this);
         rcPostosSine.setAdapter(mAdapter);
 
 
@@ -105,5 +103,13 @@ public class SineCGActivity extends Activity{
 
     public void setmAdapter(PostoSineCGAdapter mAdapter) {
         this.mAdapter = mAdapter;
+    }
+
+    public RecyclerView getRcPostosSine() {
+        return rcPostosSine;
+    }
+
+    public void setRcPostosSine(RecyclerView rcPostosSine) {
+        this.rcPostosSine = rcPostosSine;
     }
 }
