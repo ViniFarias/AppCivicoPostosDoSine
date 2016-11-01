@@ -39,14 +39,8 @@ public class PostoSineAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.activity_sinedetalhes, null);
 
             holder = new ViewHolder();
-            holder.tvCodPosto = (TextView) convertView.findViewById(R.id.tvCodPosto);
+
             holder.tvNome = (TextView) convertView.findViewById(R.id.tvNome);
-            holder.tvEntidadeConv = (TextView) convertView.findViewById(R.id.tvEntidadeConv);
-            holder.tvEndereco = (TextView) convertView.findViewById(R.id.tvEndereco);
-            holder.tvBairro = (TextView) convertView.findViewById(R.id.tvBairro);
-            holder.tvCep = (TextView) convertView.findViewById(R.id.tvCep);
-            holder.tvTelefone = (TextView) convertView.findViewById(R.id.tvTelefone);
-            holder.tvMunicipio = (TextView) convertView.findViewById(R.id.tvMunicipio);
             holder.tvUf = (TextView) convertView.findViewById(R.id.tvUf);
 
             convertView.setTag(holder);
@@ -58,14 +52,7 @@ public class PostoSineAdapter extends BaseAdapter {
 
         PostoSine postoSineItem = (PostoSine) getItem(position);
 
-        holder.tvCodPosto.setText(postoSineItem.getCodPosto().toString());
         holder.tvNome.setText(postoSineItem.getNome().toString());
-        holder.tvEntidadeConv.setText(postoSineItem.getEntidadeConveniada().toString());
-        holder.tvEndereco.setText(postoSineItem.getEndereco().toString());
-        holder.tvBairro.setText(postoSineItem.getBairro().toString());
-        holder.tvCep.setText(postoSineItem.getCep().toString());
-        holder.tvTelefone.setText(postoSineItem.getTelefone().toString());
-        holder.tvMunicipio.setText(postoSineItem.getMunicipio().toString());
         holder.tvUf.setText(postoSineItem.getUf().toString());
 
         return convertView;
@@ -90,14 +77,8 @@ public class PostoSineAdapter extends BaseAdapter {
     /*private view holder class*/
     private class ViewHolder {
 
-        TextView tvCodPosto;
+
         TextView tvNome;
-        TextView tvEntidadeConv;
-        TextView tvEndereco;
-        TextView tvBairro;
-        TextView tvCep;
-        TextView tvTelefone;
-        TextView tvMunicipio;
         TextView tvUf;
     }
 }
