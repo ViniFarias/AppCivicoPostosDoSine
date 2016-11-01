@@ -2,11 +2,14 @@ package com.example.viniciusfarias.appcivicopostosdosine.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ListView;
 
 import com.example.viniciusfarias.appcivicopostosdosine.R;
-import com.example.viniciusfarias.appcivicopostosdosine.adapter.PostoSineAdapter;
+import com.example.viniciusfarias.appcivicopostosdosine.adapter.PostoSineBrasilAdapter;
+import com.example.viniciusfarias.appcivicopostosdosine.adapter.PostoSineCGAdapter;
 import com.example.viniciusfarias.appcivicopostosdosine.entitys.PostoSine;
 import com.example.viniciusfarias.appcivicopostosdosine.network.ConnectionServer;
 
@@ -24,9 +27,13 @@ import retrofit2.Response;
  */
 public class SineBrasilActivity extends Activity{
 
-    @BindView(R.id.lvPostoBr) ListView lvPostoBr;
-    List<PostoSine> postos;
-    PostoSineAdapter adapter;
+
+    @BindView(R.id.rcPostosSine) RecyclerView rcPostosSine;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+
+    ArrayList<PostoSine> postos;
+
 
     protected void onCreate(Bundle savedInstanceState){
 
@@ -35,10 +42,15 @@ public class SineBrasilActivity extends Activity{
 
         ButterKnife.bind(this);
 
-        postos = new ArrayList<PostoSine>();
-        adapter = new PostoSineAdapter(this, postos);
+        rcPostosSine.setHasFixedSize(true);
 
-        lvPostoBr.setAdapter(adapter);
+        // use a linear layout manager
+        mLayoutManager = new LinearLayoutManager(this);
+        rcPostosSine.setLayoutManager(mLayoutManager);
+
+        // specify an adapter (see also next example)
+        mAdapter = new PostoSineCGAdapter(postos);
+        rcPostosSine.setAdapter(mAdapter);
 
         listaPostosBr();
 
@@ -60,7 +72,7 @@ public class SineBrasilActivity extends Activity{
                             List<PostoSine> postosResponse = response.body();
 
                             postos.addAll(postosResponse);
-                            adapter.notifyDataSetChanged();
+                            mAdapter.notifyDataSetChanged();
 
                         } catch (Exception e){
 

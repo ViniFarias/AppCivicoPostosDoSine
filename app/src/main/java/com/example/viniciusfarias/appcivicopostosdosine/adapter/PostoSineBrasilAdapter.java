@@ -1,3 +1,5 @@
+package com.example.viniciusfarias.appcivicopostosdosine.adapter;
+
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +51,7 @@ public class PostoSineBrasilAdapter extends RecyclerView.Adapter<PostoSineBrasil
     public PostoSineBrasilAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                                 int viewType) {
         // create a new view
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.rowlayout, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_sine, parent, false);
         // set the view's size, margins, paddings and layout parameters
         ViewHolder vh = new ViewHolder(v);
         return vh;
