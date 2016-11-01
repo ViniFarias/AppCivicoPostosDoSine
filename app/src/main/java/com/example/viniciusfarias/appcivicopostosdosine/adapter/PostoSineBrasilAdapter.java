@@ -8,7 +8,6 @@ import com.example.viniciusfarias.appcivicopostosdosine.R;
 import com.example.viniciusfarias.appcivicopostosdosine.entitys.PostoSine;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PostoSineBrasilAdapter extends RecyclerView.Adapter<PostoSineBrasilAdapter.ViewHolder> {
 
@@ -24,8 +23,8 @@ public class PostoSineBrasilAdapter extends RecyclerView.Adapter<PostoSineBrasil
 
         public ViewHolder(View v) {
             super(v);
-            txtHeader = (TextView) v.findViewById(R.id.firstLine);
-            txtFooter = (TextView) v.findViewById(R.id.secondLine);
+            txtHeader = (TextView) v.findViewById(R.id.tvUf);
+            txtFooter = (TextView) v.findViewById(R.id.tvNome);
         }
     }
 
