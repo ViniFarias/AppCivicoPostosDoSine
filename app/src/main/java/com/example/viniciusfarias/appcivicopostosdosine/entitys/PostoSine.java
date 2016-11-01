@@ -16,7 +16,7 @@ public class PostoSine {
     private String telefone;
     private String municipio;
     private String uf;
-    
+
     @SerializedName("lat")
     private String latitude;
 

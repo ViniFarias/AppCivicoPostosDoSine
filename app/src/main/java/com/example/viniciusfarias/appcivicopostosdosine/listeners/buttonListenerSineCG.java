@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.example.viniciusfarias.appcivicopostosdosine.activities.MainActivity;
+import com.example.viniciusfarias.appcivicopostosdosine.activities.SineCGActivity;
 import com.example.viniciusfarias.appcivicopostosdosine.activities.SineCodActivity;
 
 /**
@@ -23,7 +24,7 @@ public class buttonListenerSineCG implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        Intent intent = new Intent(this.mainActivity, SineCodActivity.class);
+        Intent intent = new Intent(this.mainActivity, SineCGActivity.class);
         this.mainActivity.startActivity(intent);
 
     }
