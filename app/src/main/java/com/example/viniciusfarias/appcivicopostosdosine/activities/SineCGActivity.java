@@ -27,10 +27,6 @@ import retrofit2.Response;
 public class SineCGActivity extends Activity{
 
 
-    /*@BindView(R.id.lvPostoBr) ListView lvPostoBr;
-
-    PostoSineAdapter adapter;*/
-
     @BindView(R.id.rcPostosSine) RecyclerView rcPostosSine;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -45,12 +41,7 @@ public class SineCGActivity extends Activity{
 
         ButterKnife.bind(this);
 
-        /*postos = new ArrayList<PostoSine>();
-        adapter = new PostoSineAdapter(this, postos);
-
-        lvPostoBr.setAdapter(adapter);
-
-        listaPostosCg();*/
+        postos = new ArrayList<PostoSine>();
 
         rcPostosSine.setHasFixedSize(true);
 

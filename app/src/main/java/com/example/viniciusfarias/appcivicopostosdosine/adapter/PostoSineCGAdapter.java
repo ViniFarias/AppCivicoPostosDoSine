@@ -69,6 +69,11 @@ public class PostoSineCGAdapter extends RecyclerView.Adapter<PostoSineCGAdapter.
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
+        holder.tvCodPosto.setText(mDataset.get(position).getCodPosto().toString());
+        holder.tvNome.setText(mDataset.get(position).getNome().toString());
+        holder.tvUf.setText(mDataset.get(position).getUf().toString());
+
+
 
     }
 

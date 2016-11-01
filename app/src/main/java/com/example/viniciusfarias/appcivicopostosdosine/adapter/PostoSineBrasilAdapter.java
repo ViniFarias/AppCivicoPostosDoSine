@@ -20,13 +20,15 @@ public class PostoSineBrasilAdapter extends RecyclerView.Adapter<PostoSineBrasil
     // you provide access to all the views for a data item in a view holder
     public class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        public TextView txtHeader;
-        public TextView txtFooter;
+        public TextView tvNome;
+        public TextView tvUf;
+        public TextView tvCodPosto;
 
         public ViewHolder(View v) {
             super(v);
-            txtHeader = (TextView) v.findViewById(R.id.tvUf);
-            txtFooter = (TextView) v.findViewById(R.id.tvNome);
+            tvNome = (TextView) v.findViewById(R.id.tvNome);
+            tvUf = (TextView) v.findViewById(R.id.tvUf);
+            tvCodPosto = (TextView) v.findViewById(R.id.tvCodPosto);
         }
     }
 
@@ -60,6 +62,10 @@ public class PostoSineBrasilAdapter extends RecyclerView.Adapter<PostoSineBrasil
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+
+        holder.tvCodPosto.setText(mDataset.get(position).getCodPosto().toString());
+        holder.tvNome.setText(mDataset.get(position).getNome().toString());
+        holder.tvUf.setText(mDataset.get(position).getUf().toString());
 
     }
 

@@ -42,6 +42,9 @@ public class SineBrasilActivity extends Activity{
 
         ButterKnife.bind(this);
 
+
+        postos = new ArrayList<PostoSine>();
+
         rcPostosSine.setHasFixedSize(true);
 
         // use a linear layout manager
@@ -49,7 +52,7 @@ public class SineBrasilActivity extends Activity{
         rcPostosSine.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new PostoSineCGAdapter(postos);
+        mAdapter = new PostoSineBrasilAdapter(postos);
         rcPostosSine.setAdapter(mAdapter);
 
         listaPostosBr();
