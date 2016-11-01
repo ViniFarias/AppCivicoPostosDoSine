@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 
 import com.example.viniciusfarias.appcivicopostosdosine.R;
 import com.example.viniciusfarias.appcivicopostosdosine.adapter.PostoSineCGAdapter;
 import com.example.viniciusfarias.appcivicopostosdosine.entitys.PostoSine;
+import com.example.viniciusfarias.appcivicopostosdosine.listeners.ListenerSineItem;
 import com.example.viniciusfarias.appcivicopostosdosine.network.ConnectionServer;
 
 import java.util.ArrayList;
@@ -53,6 +55,7 @@ public class SineCGActivity extends Activity{
         mAdapter = new PostoSineCGAdapter(postos);
         rcPostosSine.setAdapter(mAdapter);
 
+
         listaPostosCg();
 
     }
@@ -92,5 +95,14 @@ public class SineCGActivity extends Activity{
                 });
             }
         }).start();
+    }
+
+
+    public RecyclerView.Adapter getmAdapter() {
+        return mAdapter;
+    }
+
+    public void setmAdapter(RecyclerView.Adapter mAdapter) {
+        this.mAdapter = mAdapter;
     }
 }
