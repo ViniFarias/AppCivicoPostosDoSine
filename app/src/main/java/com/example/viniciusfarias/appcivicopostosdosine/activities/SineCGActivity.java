@@ -28,12 +28,12 @@ import retrofit2.Response;
  */
 public class SineCGActivity extends Activity{
 
-
+    ArrayList<PostoSine> postos;
     @BindView(R.id.rcPostosSine) RecyclerView rcPostosSine;
-    private RecyclerView.Adapter mAdapter;
+    private PostoSineCGAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    ArrayList<PostoSine> postos;
+    //ArrayList<PostoSine> postos;
 
 
     protected void onCreate(Bundle savedInstanceState){
@@ -54,6 +54,7 @@ public class SineCGActivity extends Activity{
         // specify an adapter (see also next example)
         mAdapter = new PostoSineCGAdapter(postos);
         rcPostosSine.setAdapter(mAdapter);
+
 
 
         listaPostosCg();
@@ -98,11 +99,11 @@ public class SineCGActivity extends Activity{
     }
 
 
-    public RecyclerView.Adapter getmAdapter() {
+    public PostoSineCGAdapter getmAdapter() {
         return mAdapter;
     }
 
-    public void setmAdapter(RecyclerView.Adapter mAdapter) {
+    public void setmAdapter(PostoSineCGAdapter mAdapter) {
         this.mAdapter = mAdapter;
     }
 }

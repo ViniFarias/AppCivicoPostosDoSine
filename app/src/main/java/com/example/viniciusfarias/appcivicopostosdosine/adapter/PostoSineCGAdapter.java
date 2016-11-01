@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.example.viniciusfarias.appcivicopostosdosine.R;
 import com.example.viniciusfarias.appcivicopostosdosine.entitys.PostoSine;
+import com.example.viniciusfarias.appcivicopostosdosine.listeners.ListenerSineItem;
+import com.example.viniciusfarias.appcivicopostosdosine.listeners.SineItemInterface;
 
 import java.util.ArrayList;
 
@@ -15,8 +17,8 @@ import java.util.ArrayList;
  * Created by vinicius on 10/31/2016.
  */
 
-public class PostoSineCGAdapter extends RecyclerView.Adapter<PostoSineCGAdapter.ViewHolder> {
-    private ArrayList<PostoSine> mDataset;
+public class PostoSineCGAdapter extends RecyclerView.Adapter<PostoSineCGAdapter.ViewHolder> implements SineItemInterface {
+    public ArrayList<PostoSine> mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -58,7 +60,7 @@ public class PostoSineCGAdapter extends RecyclerView.Adapter<PostoSineCGAdapter.
         // create a new view
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_sine, parent, false);
         // set the view's size, margins, paddings and layout parameters
-        //v.setOnClickListener(mOnClickListener);
+        //v.setOnClickListener(new ListenerSineItem(parent.getContext()));
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
@@ -81,6 +83,10 @@ public class PostoSineCGAdapter extends RecyclerView.Adapter<PostoSineCGAdapter.
     @Override
     public int getItemCount() {
         return mDataset.size();
+    }
+
+    public String getItemSineCodPosto(int position){
+        return mDataset.get(position).getCodPosto();
     }
 
 }
