@@ -62,6 +62,8 @@ public class SineCGActivity extends Activity{
         mAdapter = new PostoSineCGAdapter(postos);
         rcPostosSine.setAdapter(mAdapter);
 
+        listaPostosCg();
+
     }
 
     public void listaPostosCg() {
